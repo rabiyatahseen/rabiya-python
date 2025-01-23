@@ -1,0 +1,39 @@
+Program-1: Program for system calls of unix operating systems (opendi
+
+#include<stdio.h>
+
+#include<dirent.h>
+
+struct dirent *dptr;
+
+int main(int argc, char *argv[])
+
+{ char buff[100]; DIR *dirp; printf("\n\n ENTER DIRECTORY NAME"); scanf("%s", buff); if((dirp=opendir(buff))==NULL)
+
+{ printf("The given directory does not exist"); exit(1);
+
+} while(dptr readdir(dirp))
+
+{ printf("%s\n", dptr->d_name);
+
+} closedir(dirp);
+
+}
+
+Program-2: program for system calls of unix operating system (fork, ge
+
+#include<stdio.h> #include<unistd.h> main()
+
+{ int pid,pid1,pid2; pid=fork(); if(pid==-1)
+
+{ printf("ERROR IN PROCESS CREATION \n"); exit(1);
+
+} if(pid!=0)
+
+{ pid1=getpid(); printf("\n' the parent process ID is %d\n", pid1);
+
+} else
+
+{ pid2=getpid(); printf("\n the child process ID is %d\n", pid2);
+
+}
